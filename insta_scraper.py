@@ -4,11 +4,16 @@ import time
 import argparse
 
 # Set up argument parser
-parser = argparse.ArgumentParser(description="Instagram Scraper: Scrape Reels, Posts, or Stories")
-parser.add_argument("-u", "--username", required=True, help="Target Instagram username")
-parser.add_argument("-s", "--session", required=True, help="Instagram session ID")
-parser.add_argument("-t", "--type", choices=["reels", "posts", "stories"], required=True, help="Type of content to scrape")
-parser.add_argument("-y", "--year", type=int, help="Target year for filtering posts or reels")
+parser = argparse.ArgumentParser(
+    description="Instagram Scraper: Download Reels, Posts, or Stories from a public or private Instagram account using a session ID."
+)
+parser.add_argument("-u", "--username", required=True, help="Target Instagram username to scrape content from.")
+parser.add_argument("-s", "--session", required=True, help="Instagram session ID for authentication. Obtain it from your browser cookies.")
+parser.add_argument(
+    "-t", "--type", choices=["reels", "posts", "stories"], required=True,
+    help="Specify what to scrape: 'reels' (only videos), 'posts' (all posts), or 'stories' (active stories)."
+)
+parser.add_argument("-y", "--year", type=int, help="Filter posts or reels by a specific year (optional).")
 args = parser.parse_args()
 
 USERNAME = args.username
