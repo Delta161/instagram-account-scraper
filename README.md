@@ -1,6 +1,4 @@
-Here's a **README.md** description for your GitHub repository:  
 
----
 
 # Instagram Scraper 📸  
 
